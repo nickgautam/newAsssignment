@@ -2,15 +2,15 @@ const mongoose = require("mongoose")
 
 const customerSchema = new mongoose.Schema({
 
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    mobileNumber: { type: String, required: true, unique: true },
+    firstName: { type: String, required: true, trim: true },
+    lastName: { type: String, required: true, trim: true },
+    mobileNumber: { type: String, required: true, unique: true, trim: true },
     DOB: { type: Date, required: true },
-    emailID: { type: String, required: true, unique: true },
+    emailID: { type: String, required: true, unique: true, trim: true },
     address: { type: String, required: true },
-    customerID: { type: String, required: true, unique: true },
-    status: { type: String, enum: ["ACTIVE", "INACTIVE"], default: "ACTIVE" },
-    isDeleted: { type: Boolean, default: false }
+    customerID: { type: String, required: true, unique: true, trim: true },
+    status: { type: String, enum: ["ACTIVE", "INACTIVE"], default: "ACTIVE", trim: true },
+    isDeleted: { type: Boolean, default: false, trim: true }
 
 }, { timestamps: true })
 
