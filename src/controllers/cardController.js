@@ -112,7 +112,6 @@ exports.createCard = async (req, res) => {
             msg: "cardNumber must be like:-- 'C001' "
         })
 
-/////////////////////////////////////
         const registerCardNumber = await cardModel.find({ cardNumber: cardNumber })
         if (registerCardNumber.length != 0) return res.status(400).send({
             status: false,
