@@ -73,7 +73,6 @@ exports.createCard = async (req, res) => {
             msg: "customerID must be string. Example:--> 'UUID' "
         })
 
-
         if (["REGULAR", "SPECIAL"].indexOf(cardType) == -1) return res.status(400).send({
             status: false,
             message: "Enter a valid cardType 'REGULAR' or 'SPECIAL' ",
